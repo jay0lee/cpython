@@ -34,6 +34,7 @@ jobs:
             git fetch origin $GITHUB_BASE_REF --depth=1
             git diff --name-only origin/$GITHUB_BASE_REF... | grep -qvE '(\.rst$|^Doc|^Misc)' && echo '::set-output name=run_tests::true' || true
           fi
+  
   build_win32:
     name: 'Windows (x86)'
     runs-on: windows-latest
