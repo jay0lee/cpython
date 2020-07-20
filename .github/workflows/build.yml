@@ -38,8 +38,6 @@ jobs:
   build_win32:
     name: 'Windows (x86)'
     runs-on: windows-latest
-    needs: check_source
-    if: needs.check_source.outputs.run_tests == 'true'
     steps:
     - uses: actions/checkout@v2
     - name: Build CPython
@@ -52,8 +50,6 @@ jobs:
   build_win_amd64:
     name: 'Windows (x64)'
     runs-on: windows-latest
-    needs: check_source
-    if: needs.check_source.outputs.run_tests == 'true'
     steps:
     - uses: actions/checkout@v2
     - name: Build CPython
@@ -66,8 +62,6 @@ jobs:
   build_macos:
     name: 'macOS'
     runs-on: macos-latest
-    needs: check_source
-    if: needs.check_source.outputs.run_tests == 'true'
     steps:
     - uses: actions/checkout@v2
     - name: Configure CPython
@@ -82,8 +76,6 @@ jobs:
   build_ubuntu:
     name: 'Ubuntu'
     runs-on: ubuntu-latest
-    needs: check_source
-    if: needs.check_source.outputs.run_tests == 'true'
     env:
       OPENSSL_VER: 1.1.1f
     steps:
