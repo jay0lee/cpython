@@ -25,6 +25,14 @@ jobs:
     - name: Build CPython installer
       run: .\Tools\msi\build.bat -x86
 
+  build_win_arm64:
+    name: 'Windows (arm64) Installer'
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build CPython installer
+      run: .\Tools\msi\build.bat -arm64
+
   build_win_amd64:
     name: 'Windows (x64) Installer'
     runs-on: windows-latest
